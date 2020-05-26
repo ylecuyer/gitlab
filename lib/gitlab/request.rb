@@ -7,6 +7,7 @@ module Gitlab
   # @private
   class Request
     include HTTParty
+    debug_output $stdout
     format :json
     headers 'Accept' => 'application/json', 'Content-Type' => 'application/x-www-form-urlencoded'
     parser(proc { |body, _| parse(body) })
